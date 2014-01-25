@@ -290,8 +290,10 @@ Client methods
     * **pingInterval** - < _integer_ > - Number of seconds between pings while idle. **Default:** 60
 
     * **secureAuth** - < _boolean_ > - Use password hashing available in MySQL 4.1.1+ when authenticating. **Default:** true
-
+    
     * **compress** - < _boolean_ > - Use connection compression? **Default:** false
+
+    * **metadata** - < _boolean_ > - If true, metadata contains field information about columns of query results. **Default:** false
 
     * **ssl** - < _mixed_ > - If boolean true, defaults listed below and default ciphers will be used, otherwise it must be an object with any of the following valid properties: **Default:** false
 
@@ -335,7 +337,7 @@ Results events
 
 * **error**(< _Error_ >err) - An error occurred while processing this set of results (the 'end' event will not be emitted).
 
-* **end**(< _object_ >info) - All queries in this result set finished _successfully_. `info` contains statistics such as 'affectedRows', 'insertId', and 'numRows.'
+* **end**(< _object_ >info, < _object_ >metadata) - All queries in this result set finished _successfully_. `info` contains statistics such as 'affectedRows', 'insertId', and 'numRows'. `metadata` contains fields information about 'types', 'charsetNrs', 'dbs', 'tables', 'orgTables', 'names', 'orgNames' for each column.
 
 
 Results methods
