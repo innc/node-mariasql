@@ -749,7 +749,7 @@ class Client : public ObjectWrap {
       uint16_t *new_buf;
       unsigned long *lengths;
       Handle<Value> field_value;
-      Local<Object> row, metadata, types, charsetNrs, dbs, tables, orgTables, names, orgNames;      
+      Local<Object> row, metadata, types, charsetNrs, dbs, tables, orgTables, names, orgNames;
 
       if (n_fields == 0)
         return;
