@@ -1,4 +1,3 @@
-
 Description
 ===========
 
@@ -336,7 +335,7 @@ Results events
 
 * **error**(< _Error_ >err) - An error occurred while processing this set of results (the 'end' event will not be emitted).
 
-* **end**() - All queries in this result set finished _successfully_.
+* **end**(< _object_ >info) - All queries in this result set finished _successfully_. `info` contains statistics such as 'affectedRows', 'insertId', and 'numRows.'
 
 
 Results methods
@@ -354,7 +353,7 @@ Query events
 
 * **error**(< _Error_ >err) - An error occurred while executing this query (the 'end' event will not be emitted).
 
-* **end**(< _object_ >info) - The query finished _successfully_. `info` contains statistics such as 'affectedRows', 'insertId', and 'numRows.'
+* **end**() - The query finished _successfully_. 
 
 
 Query methods
